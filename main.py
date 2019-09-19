@@ -12,7 +12,7 @@ from linebot.models import (
 import os
 
 app = Flask(__name__)
-
+app.debug = False
 #環境変数取得
 # LINE Developersで設定されているアクセストークンとChannel Secretをを取得し、設定します。
 YOUR_CHANNEL_ACCESS_TOKEN = os.environ["YOUR_CHANNEL_ACCESS_TOKEN"]
