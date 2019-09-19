@@ -56,11 +56,10 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     if event.reply_token == "00000000000000000000000000000000":
-        print("a")
         return
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=event.message.text)) #ここでオウム返しのメッセージを返します。
+        TextSendMessage(text="a")) #ここでオウム返しのメッセージを返します。
 
 # ポート番号の設定
 if __name__ == "__main__":
