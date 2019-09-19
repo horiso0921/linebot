@@ -62,7 +62,7 @@ def handle_message(event):
     print(event.message.text)
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=os.environ[res.getResponse(event.message.text)])) #ここでオウム返しのメッセージを返します。
+        TextSendMessage(text=res.getResponse(event.message.text))) #ここでオウム返しのメッセージを返します。
 
 # ポート番号の設定  
 if __name__ == "__main__":
