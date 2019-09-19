@@ -58,6 +58,7 @@ def callback():
 def handle_message(event):
     if event.reply_token == "00000000000000000000000000000000":
         return
+    print(event.message.text)
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=os.environ[Response.getResponse(event.message.text)])) #ここでオウム返しのメッセージを返します。
