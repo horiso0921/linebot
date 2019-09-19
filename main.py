@@ -14,6 +14,7 @@ from account_response import Response
 
 app = Flask(__name__)
 app.debug = False
+res = Response()
 #環境変数取得
 # LINE Developersで設定されているアクセストークンとChannel Secretをを取得し、設定します。
 YOUR_CHANNEL_ACCESS_TOKEN = os.environ["YOUR_CHANNEL_ACCESS_TOKEN"]
@@ -61,9 +62,9 @@ def handle_message(event):
     print(event.message.text)
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=os.environ[Response.getResponse(event.message.text)])) #ここでオウム返しのメッセージを返します。
+        TextSendMessage(text=os.environ[res.getResponse(event.message.text)])) #ここでオウム返しのメッセージを返します。
 
-# ポート番号の設定
+# ポート番号の設定  
 if __name__ == "__main__":
 #    app.run()
     port = int(os.getenv("PORT", 5000))

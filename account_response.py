@@ -17,6 +17,7 @@ class Response:
     count = 0
 
     def getResponse(self, text):
+        print(text)
         if self.count >= 4:
             self.count = 0
         self.count += 1
